@@ -1,0 +1,9 @@
+.board{
+    display : flex;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    overflow-x : auto;
+    flex: 1;
+    align-items: flex-start;
+}
