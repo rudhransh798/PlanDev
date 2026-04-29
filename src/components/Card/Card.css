@@ -1,0 +1,63 @@
+.card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--color-accent);
+}
+
+.card__label{
+    display: flex;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background-color: var(--color-surface);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+}
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__priority{
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 500;
+    color: var(--color-priority-medium);
+    background-color: beige;
+    opacity: 0.5;
+}
+
+.card__title{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+
+.card__description{
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.card__footer{
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-xs);
+}
+
+.card__due-date{
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
