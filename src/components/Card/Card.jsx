@@ -1,8 +1,14 @@
 import "./Card.css";
+import { useDraggable } from '@dnd-kit/core'
+import { CSS } from '@dnd-kit/utilities'
 
 const Card = ({ task, columnId }) => {
+    const { attributes, listeners, setNodeRef, transform } = useDraggable({ id: task.id })
     return (
-        <div className="card">
+        <div className="card" ref={setNodeRef}
+            {...attributes}
+            {...listeners}
+            style={{ transform: CSS.Transform.toString(transform) }}>
             <div className="card__header">
                 <span className="card__label">{task.label}</span>
                 <span className="card__priority">{task.priority}</span>

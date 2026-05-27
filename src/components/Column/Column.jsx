@@ -1,7 +1,9 @@
 import "./Column.css";
 import Card from "../Card"
+import { useDroppable } from '@dnd-kit/core'
 
 const Column = ( { column , tasks , onMoveTask } ) => {
+    const { setNodeRef } = useDroppable({ id: column.id })
     return (
         <div className = "column">
             <div className = "column__header">
@@ -11,7 +13,7 @@ const Column = ( { column , tasks , onMoveTask } ) => {
                     <span className = "column__count">Tasks : {tasks.length}</span>
                 </div>
             </div>
-            <div className = "column__tasks">
+            <div className = "column__tasks" ref={setNodeRef}>
                 { tasks.map( (task) => (
                     <Card key={task.id} task={task} columnId={column.id} />
                 ) ) }
