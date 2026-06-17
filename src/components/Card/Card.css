@@ -61,3 +61,14 @@
     font-size: 11px;
     color: var(--color-text-secondary);
 }
+
+.card__delete-btn{
+    background:transparent;
+    border:none;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+        color: var(--color-priority-high);
+    }
+}
