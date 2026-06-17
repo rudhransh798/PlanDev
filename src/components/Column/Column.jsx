@@ -8,7 +8,7 @@ const Column = ( { column , tasks , onMoveTask } ) => {
         <div className = "column">
             <div className = "column__header">
                 <div className = "column__title-row">
-                    <span className = "column__color-dot"></span>
+                    <span className={`column__color-dot column__color-dot--${column.color}`}></span>
                     <h3 className = "column__title">{column.title}</h3>
                     <span className = "column__count">Tasks : {tasks.length}</span>
                 </div>

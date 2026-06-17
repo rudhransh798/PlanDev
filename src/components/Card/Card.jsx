@@ -17,7 +17,7 @@ const Card = ({ task, columnId }) => {
             style={{ transform: CSS.Transform.toString(transform) }}>
             <div className="card__header">
                 <span className="card__label">{task.label}</span>
-                <span className="card__priority">{task.priority}</span>
+                <span className={`card__priority card__priority--${task.priority}`}>{task.priority}</span>
                 <button className="card__delete-btn" onClick={handleDelete} onPointerDown={(e) => e.stopPropagation()}
 >X</button>
             </div>

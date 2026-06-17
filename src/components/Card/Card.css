@@ -33,9 +33,22 @@
     padding: 2px 8px;
     border-radius: 99px;
     font-weight: 500;
-    color: var(--color-priority-medium);
-    background-color: beige;
     opacity: 0.5;
+}
+
+.card__priority--high {
+  color: var(--color-priority-high);
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.card__priority--medium {
+  color: var(--color-priority-medium);
+  background-color: rgba(245, 158, 11, 0.15);
+}
+
+.card__priority--low {
+  color: var(--color-priority-low);
+  background-color: rgba(16, 185, 129, 0.15);
 }
 
 .card__title{

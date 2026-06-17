@@ -10,21 +10,25 @@ const useBoardStore = create(
                 "column-1": {
                     id: "column-1",
                     title: "To Do",
+                    color: "todo",       // ← new field
                     taskIds: ["task-1", "task-2", "task-3"]
                 },
                 "column-2": {
                     id: "column-2",
                     title: "In Progress",
+                    color: "inprogress",  // ← new field
                     taskIds: []
                 },
                 "column-3": {
                     id: "column-3",
                     title: "In Review",
+                    color: "inreview",   // ← new field
                     taskIds: []
                 },
                 "column-4": {
                     id: "column-4",
                     title: "Done",
+                    color: "done",       // ← new field
                     taskIds: []
                 }
             },

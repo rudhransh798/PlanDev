@@ -26,7 +26,21 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: var(--color-todo);
+}
+.column__color-dot--todo {
+  background-color: var(--color-todo);
+}
+
+.column__color-dot--inprogress {
+  background-color: var(--color-inprogress);
+}
+
+.column__color-dot--inreview {
+  background-color: var(--color-inreview);
+}
+
+.column__color-dot--done {
+  background-color: var(--color-done);
 }
 
 .column__title{
