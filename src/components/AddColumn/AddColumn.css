@@ -1,0 +1,152 @@
+.add-column{
+    min-width: 280px;
+}
+
+/* ==========================================================================
+   Add Column Component Styles
+   ========================================================================== */
+
+/* 1. Trigger Button State */
+.add-column__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  padding: var(--spacing-md);
+  
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.add-column__trigger:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary); /* Optional: slight text lift on hover */
+}
+
+/* 2. Form Container Wrapper */
+.add-column__form-wrapper {
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+/* 3. Form Inner Layout */
+.add-column__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* 4. Form Input Field */
+.add-column__form input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-size: 14px;
+  outline: none;
+  
+  background-color: var(--color-surface-variant, var(--color-surface)); /* Fallback handling if variant isn't defined */
+  color: var(--color-text-primary);
+  
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease;
+}
+
+.add-column__form input:focus {
+  border-color: var(--color-accent);
+}
+
+/* 5. Color Picker Container */
+.add-column__colors {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-xs) 0 var(--spacing-sm) 0; /* Breathing room top/bottom */
+}
+
+/* 6. Color Dots Base & Selection State */
+.add-column__color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  /* Reserved border space avoids visual layout shifting on select */
+  border: 2px solid transparent; 
+  transition: border-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-column__color-dot:hover {
+  transform: scale(1.1); /* Subtle interactivity cue */
+}
+
+.add-column__color-dot.selected {
+  border-color: var(--color-text-primary);
+}
+
+/* 7. Color Modifiers */
+.add-column__color-dot--todo { 
+  background-color: var(--color-todo); 
+}
+
+.add-column__color-dot--inprogress { 
+  background-color: var(--color-inprogress); 
+}
+
+.add-column__color-dot--inreview { 
+  background-color: var(--color-inreview); 
+}
+
+.add-column__color-dot--done { 
+  background-color: var(--color-done); 
+}
+
+/* 8. Action Buttons */
+.add-column__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+/* Primary Submit Button */
+.add-column__btn-submit {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  
+  background-color: var(--color-accent);
+  color: #ffffff; /* Typically white text on accented backgrounds */
+  
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.2s ease;
+}
+
+.add-column__btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* Muted Cancel Button */
+.add-column__btn-cancel {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 14px;
+  cursor: pointer;
+  
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  
+  border: none;
+}
+
+.add-column__btn-cancel:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}

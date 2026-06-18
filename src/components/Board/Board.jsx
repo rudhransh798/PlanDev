@@ -2,6 +2,7 @@ import useBoardStore from "../../store/useBoardStore"
 import "./Board.css"
 import Column from "../Column"
 import { DndContext, closestCenter } from '@dnd-kit/core'
+import AddColumn from "../AddColumn";
 
 const Board = () => {
 
@@ -30,6 +31,7 @@ const Board = () => {
                 <Column key={columnId} column={columns[columnId]} tasks={columns[columnId].taskIds.map((taskId) => (tasks[taskId]))} onMoveTask = {moveTask} />
             ))}
             </DndContext>
+            <AddColumn />
         </div>
     )
 
