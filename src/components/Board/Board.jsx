@@ -28,7 +28,7 @@ const Board = () => {
                 onDragEnd={handleDragEnd}
             >
             {columnOrder.map((columnId) => (
-                <Column key={columnId} column={columns[columnId]} tasks={columns[columnId].taskIds.map((taskId) => (tasks[taskId]))} onMoveTask = {moveTask} />
+                <Column key={columnId} column={columns[columnId]} tasks={columns[columnId].taskIds.map((taskId) => (tasks[taskId]))} />
             ))}
             </DndContext>
             <AddColumn />

@@ -3,7 +3,7 @@ import Card from "../Card"
 import { useDroppable } from '@dnd-kit/core'
 import useBoardStore from "../../store/useBoardStore";
 
-const Column = ( { column , tasks , onMoveTask } ) => {
+const Column = ( { column , tasks } ) => {
 
     const deleteColumn = useBoardStore((state) => (state.deleteColumn))
     const handleDeleteColumn = () =>{

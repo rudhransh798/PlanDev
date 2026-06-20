@@ -10,25 +10,25 @@ const useBoardStore = create(
                 "column-1": {
                     id: "column-1",
                     title: "To Do",
-                    color: "todo",       // ← new field
+                    color: "todo",
                     taskIds: ["task-1", "task-2", "task-3"]
                 },
                 "column-2": {
                     id: "column-2",
                     title: "In Progress",
-                    color: "inprogress",  // ← new field
+                    color: "inprogress",
                     taskIds: []
                 },
                 "column-3": {
                     id: "column-3",
                     title: "In Review",
-                    color: "inreview",   // ← new field
+                    color: "inreview",
                     taskIds: []
                 },
                 "column-4": {
                     id: "column-4",
                     title: "Done",
-                    color: "done",       // ← new field
+                    color: "done",
                     taskIds: []
                 }
             },
@@ -63,9 +63,7 @@ const useBoardStore = create(
             },
             addColumn: (columnData) => {
                 const new_id = uuidv4();
-
                 set((state) => ({
-                    ...state,
                     columnOrder: [...state.columnOrder, new_id],
                     columns: {
                         ...state.columns,
@@ -76,11 +74,10 @@ const useBoardStore = create(
                     }
                 }))
             },
+
             addTask: (columnId, taskData) => {
                 const new_id = uuidv4();
-
                 set((state) => ({
-                    ...state,
                     tasks: {
                         ...state.tasks,
                         [new_id]: {
@@ -95,15 +92,12 @@ const useBoardStore = create(
                             ...state.columns[columnId],
                             taskIds: [...state.columns[columnId].taskIds, new_id]
                         }
-
                     }
                 }));
             },
 
-            // moveTask will move the task from one column to another by moving its id 
             moveTask: (columnId_1, columnId_2, taskId) => {
                 set((state) => ({
-                    ...state,
                     columns: {
                         ...state.columns,
                         [columnId_1]: {
@@ -120,14 +114,13 @@ const useBoardStore = create(
 
             deleteColumn: (columnId) => {
                 set((state) => {
-                    const { [columnId]: removed, ...remainingColumns } = state.columns
+                    const { [columnId]: _, ...remainingColumns } = state.columns
                     const remainingColumnOrder = state.columnOrder.filter(id => id !== columnId)
                     const taskIdsToRemove = state.columns[columnId].taskIds
                     const remainingTasks = Object.fromEntries(
                         Object.entries(state.tasks).filter(([id]) => !taskIdsToRemove.includes(id))
                     )
                     return {
-                        ...state,
                         columns: remainingColumns,
                         columnOrder: remainingColumnOrder,
                         tasks: remainingTasks
@@ -136,11 +129,9 @@ const useBoardStore = create(
             },
 
             deleteTask: (taskId, columnId) => {
-
                 set((state) => {
-                    const { [taskId]: removed, ...remainingTasks } = state.tasks
-                    return ({
-                        ...state,
+                    const { [taskId]: _, ...remainingTasks } = state.tasks
+                    return {
                         tasks: remainingTasks,
                         columns: {
                             ...state.columns,
@@ -149,8 +140,7 @@ const useBoardStore = create(
                                 taskIds: state.columns[columnId].taskIds.filter(id => id !== taskId)
                             }
                         }
-                    })
-
+                    }
                 })
             }
         }),
