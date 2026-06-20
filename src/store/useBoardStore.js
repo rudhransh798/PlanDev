@@ -118,6 +118,23 @@ const useBoardStore = create(
                 }))
             },
 
+            deleteColumn: (columnId) => {
+                set((state) => {
+                    const { [columnId]: removed, ...remainingColumns } = state.columns
+                    const remainingColumnOrder = state.columnOrder.filter(id => id !== columnId)
+                    const taskIdsToRemove = state.columns[columnId].taskIds
+                    const remainingTasks = Object.fromEntries(
+                        Object.entries(state.tasks).filter(([id]) => !taskIdsToRemove.includes(id))
+                    )
+                    return {
+                        ...state,
+                        columns: remainingColumns,
+                        columnOrder: remainingColumnOrder,
+                        tasks: remainingTasks
+                    }
+                })
+            },
+
             deleteTask: (taskId, columnId) => {
 
                 set((state) => {

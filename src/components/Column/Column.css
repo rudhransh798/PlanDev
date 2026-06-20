@@ -64,3 +64,14 @@
     flex-direction: column;
     gap: var(--spacing-sm);
 }
+
+.column__delete-btn{
+    background-color: transparent;
+    border: 0;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.column__delete-btn:hover{
+    color: var(--color-priority-high);
+}
