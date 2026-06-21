@@ -43,7 +43,7 @@ const Modal = ({ onClose, onSubmit, columns }) => {
                         }} />
                     </div>
                     <div className="modal__field">
-                        <label htmlFor="Priority"></label>
+                        <label htmlFor="Priority">Priority</label>
                         <select value={taskData.priority} onChange={(e) => setTaskData({ ...taskData, priority: e.target.value })}>
                             <option value="high">High</option>
                             <option value="medium">Medium</option>
