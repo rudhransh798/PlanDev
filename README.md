@@ -2,6 +2,8 @@
 
 PlanDev is a modern Kanban board built for developers and teams to organize, prioritize, and track their work. It features a clean dark UI, drag-and-drop task management, dynamic column creation, and persistent storage — all without a backend.
 
+🚀 **Live Demo:** [plan-dev.vercel.app](https://plan-dev.vercel.app)
+
 ![PlanDev Board](./assets/screenshot.png)
 
 ## Features
